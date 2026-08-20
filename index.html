@@ -3,641 +3,606 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Antonio Garcia — Federal Design & Motion Graphics</title>
 <meta name="description" content="Multidisciplinary designer producing executive communications, data visualization, and motion graphics for defense and federal environments. Active Secret clearance.">
+<title>Antonio Garcia — Federal Design, Data Visualization, and Motion Graphics</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Inter+Tight:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
 :root {
-  --bg: #FDFDFC;
-  --bg-alt: #F5F3EE;
-  --text: #0A0A0A;
-  --text-muted: #6B6B6B;
-  --text-subtle: #9A9A9A;
-  --accent: #1A2F4A;
-  --accent-warm: #8B7355;
-  --border: #E8E5E0;
-  --border-strong: #C8C4BC;
-  --serif: 'Instrument Serif', Georgia, serif;
-  --sans: 'Inter', -apple-system, sans-serif;
-  --mono: 'JetBrains Mono', monospace;
+  --navy: #1A2B4A;
+  --navy-light: #A3BFE0;
+  --navy-tint: #F0F3F8;
+  --text-primary: #0A0A0A;
+  --text-secondary: #4A4A4A;
+  --text-muted: #888888;
+  --border: #E5E5E5;
+  --border-strong: #CCCCCC;
+  --surface: #FFFFFF;
+  --surface-alt: #FAFAFA;
+  --max-width: 960px;
+  --max-width-wide: 1200px;
 }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: var(--sans);
-  background: var(--bg);
-  color: var(--text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
   line-height: 1.6;
-  font-weight: 400;
+  color: var(--text-primary);
+  background: var(--surface);
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
-  max-width: 1280px;
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 32px;
 }
 
-@media (max-width: 768px) {
-  .container { padding: 0 24px; }
+.container-wide {
+  max-width: var(--max-width-wide);
+  margin: 0 auto;
+  padding: 0 32px;
 }
 
 /* NAVIGATION */
 nav {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
-  background: rgba(253, 253, 252, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   z-index: 100;
   padding: 20px 0;
 }
 
-.nav-inner {
+nav .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 48px;
 }
 
-.nav-brand {
-  font-family: var(--serif);
-  font-size: 22px;
-  font-weight: 400;
-  letter-spacing: 0.01em;
-  color: var(--text);
-  text-decoration: none;
-}
-
-.nav-links {
-  display: flex;
-  gap: 40px;
-  list-style: none;
-}
-
-.nav-links a {
-  font-size: 13px;
+nav .brand {
+  font-family: 'Inter Tight', 'Inter', sans-serif;
   font-weight: 500;
-  color: var(--text-muted);
+  font-size: 16px;
+  color: var(--text-primary);
   text-decoration: none;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
+
+nav ul a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
   transition: color 0.2s ease;
 }
 
-.nav-links a:hover { color: var(--text); }
+nav ul a:hover {
+  color: var(--navy);
+}
 
-@media (max-width: 768px) {
-  .nav-inner { padding: 0 24px; }
-  .nav-links { display: none; }
+@media (max-width: 640px) {
+  nav ul { gap: 20px; }
+  nav ul a { font-size: 13px; }
 }
 
 /* HERO */
 .hero {
-  padding: 200px 0 140px;
-  border-bottom: 1px solid var(--border);
+  padding: 120px 0 96px;
 }
 
-.hero-meta {
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--text-subtle);
-  text-transform: uppercase;
+.eyebrow {
+  font-size: 11px;
+  font-weight: 500;
   letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--navy);
   margin-bottom: 32px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
 }
 
-.hero-meta::before {
-  content: '';
-  width: 32px;
-  height: 1px;
-  background: var(--text-subtle);
-}
-
-.hero-title {
-  font-family: var(--serif);
-  font-size: clamp(48px, 8vw, 96px);
-  font-weight: 400;
+.hero h1 {
+  font-family: 'Inter Tight', 'Inter', sans-serif;
+  font-size: clamp(40px, 6vw, 68px);
+  font-weight: 500;
   line-height: 1.05;
-  letter-spacing: -0.02em;
-  color: var(--text);
+  letter-spacing: -0.025em;
   margin-bottom: 40px;
-  max-width: 1100px;
+  max-width: 900px;
 }
 
-.hero-title em {
+.hero h1 em {
   font-style: italic;
-  color: var(--accent-warm);
+  color: var(--navy);
+  font-weight: 400;
 }
 
-.hero-lede {
+.hero .lead {
   font-size: 20px;
-  line-height: 1.5;
-  color: var(--text-muted);
-  max-width: 640px;
-  margin-bottom: 56px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin-bottom: 64px;
   font-weight: 300;
 }
 
-.hero-details {
+.hero-meta {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 32px;
-  max-width: 900px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 40px 32px;
   padding-top: 40px;
   border-top: 1px solid var(--border);
 }
 
-.hero-detail-label {
-  font-family: var(--mono);
+.hero-meta-item .label {
   font-size: 11px;
-  color: var(--text-subtle);
+  font-weight: 500;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  color: var(--text-muted);
   margin-bottom: 8px;
 }
 
-.hero-detail-value {
+.hero-meta-item .value {
   font-size: 15px;
-  color: var(--text);
   font-weight: 500;
+  color: var(--text-primary);
 }
 
-/* SECTION HEADERS */
-section {
-  padding: 140px 0;
-  border-bottom: 1px solid var(--border);
+/* SECTION HEADER */
+.section-header {
+  padding: 96px 0 48px;
+  border-top: 1px solid var(--border);
 }
 
-.section-label {
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--text-subtle);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
+.section-header .eyebrow {
   margin-bottom: 24px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
 }
 
-.section-label::before {
-  content: '';
-  width: 32px;
-  height: 1px;
-  background: var(--text-subtle);
-}
-
-.section-title {
-  font-family: var(--serif);
-  font-size: clamp(36px, 5vw, 56px);
-  font-weight: 400;
+.section-header h2 {
+  font-family: 'Inter Tight', 'Inter', sans-serif;
+  font-size: clamp(32px, 4vw, 44px);
+  font-weight: 500;
   line-height: 1.1;
-  letter-spacing: -0.01em;
-  color: var(--text);
-  margin-bottom: 24px;
-  max-width: 900px;
+  letter-spacing: -0.02em;
+  max-width: 800px;
 }
 
-.section-lede {
+.section-header h2 em {
+  font-style: italic;
+  color: var(--navy);
+  font-weight: 400;
+}
+
+/* CASE STUDY */
+.case-study {
+  padding: 64px 0 96px;
+  border-top: 1px solid var(--border);
+}
+
+.case-study:first-of-type {
+  border-top: none;
+}
+
+.case-study .eyebrow {
+  margin-bottom: 20px;
+}
+
+.case-study h3 {
+  font-family: 'Inter Tight', 'Inter', sans-serif;
+  font-size: clamp(28px, 3.5vw, 38px);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+  max-width: 800px;
+}
+
+.case-study .description {
   font-size: 18px;
-  line-height: 1.6;
-  color: var(--text-muted);
+  line-height: 1.55;
+  color: var(--text-secondary);
+  margin-bottom: 48px;
   max-width: 720px;
-  margin-bottom: 72px;
   font-weight: 300;
 }
 
-/* FEATURED CASE STUDY */
-.case-study {
-  background: var(--bg-alt);
+.case-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 32px;
+  padding: 32px 0;
+  margin-bottom: 56px;
+  border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
 
-.case-header {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  margin-bottom: 80px;
-}
-
-@media (max-width: 900px) {
-  .case-header { grid-template-columns: 1fr; gap: 40px; }
-}
-
-.case-meta-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  align-content: start;
-}
-
-.case-meta-item {
-  padding-top: 20px;
-  border-top: 1px solid var(--border-strong);
-}
-
-.case-meta-label {
-  font-family: var(--mono);
+.case-meta-item .label {
   font-size: 11px;
-  color: var(--text-subtle);
+  font-weight: 500;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  color: var(--text-muted);
   margin-bottom: 8px;
 }
 
-.case-meta-value {
-  font-size: 15px;
-  color: var(--text);
+.case-meta-item .value {
+  font-size: 14px;
   font-weight: 500;
+  color: var(--text-primary);
   line-height: 1.4;
 }
 
-.case-content {
-  display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 80px;
-  margin-bottom: 80px;
+.case-image-wrapper {
+  margin: 48px 0;
 }
 
-@media (max-width: 900px) {
-  .case-content { grid-template-columns: 1fr; gap: 24px; }
-}
-
-.case-content-label {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--text-subtle);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  padding-top: 8px;
-}
-
-.case-content-body p {
-  font-size: 17px;
-  line-height: 1.7;
-  color: var(--text);
-  margin-bottom: 24px;
-  max-width: 720px;
-}
-
-.case-content-body p:last-child { margin-bottom: 0; }
-
-.case-images {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
-  margin-top: 80px;
-}
-
-.case-image-block {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  padding: 40px;
-}
-
-@media (max-width: 768px) {
-  .case-image-block { padding: 20px; }
-}
-
-.case-image-block img {
+.case-image {
   width: 100%;
   height: auto;
   display: block;
+  border: 1px solid var(--border);
 }
 
 .case-image-caption {
-  margin-top: 24px;
-  padding-top: 20px;
-  border-top: 1px solid var(--border);
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 40px;
-}
-
-@media (max-width: 700px) {
-  .case-image-caption { grid-template-columns: 1fr; gap: 8px; }
-}
-
-.case-caption-label {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--text-subtle);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.case-caption-text {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--text-muted);
-  line-height: 1.6;
+  margin-top: 16px;
+  line-height: 1.5;
+  max-width: 720px;
+}
+
+.case-image-caption strong {
+  color: var(--text-secondary);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 11px;
+}
+
+.case-section-header {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin: 56px 0 20px;
+}
+
+.case-body {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  max-width: 720px;
+  margin-bottom: 24px;
+  font-weight: 300;
+}
+
+.case-body strong {
+  color: var(--text-primary);
+  font-weight: 500;
 }
 
 .case-deliverables {
-  margin-top: 80px;
-  padding-top: 60px;
-  border-top: 1px solid var(--border-strong);
-  display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 80px;
-}
-
-@media (max-width: 900px) {
-  .case-deliverables { grid-template-columns: 1fr; gap: 24px; }
-}
-
-.deliverables-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 32px;
   list-style: none;
+  margin: 24px 0;
+  padding: 0;
 }
 
-.deliverables-list li {
+.case-deliverables li {
   font-size: 15px;
-  color: var(--text);
-  padding-left: 20px;
-  position: relative;
-  line-height: 1.5;
+  color: var(--text-secondary);
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  font-weight: 400;
 }
 
-.deliverables-list li::before {
-  content: '→';
-  position: absolute;
-  left: 0;
-  color: var(--accent-warm);
-  font-family: var(--mono);
+.case-deliverables li:last-child {
+  border-bottom: none;
+}
+
+/* DATA PROGRESSION (raw → cleaned → final) */
+.data-progression {
+  margin: 56px 0;
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.data-progression .step {
+  margin-bottom: 40px;
+}
+
+.data-progression .step:last-child {
+  margin-bottom: 0;
+}
+
+.data-progression .step-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.data-progression .step-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.data-progression .step-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--border);
+  margin-top: 16px;
 }
 
 /* EXPERIENCE */
 .experience-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+  padding: 32px 0 0;
 }
 
 .experience-item {
-  padding: 48px 0;
-  border-top: 1px solid var(--border);
   display: grid;
-  grid-template-columns: 200px 1fr 240px;
+  grid-template-columns: 180px 1fr;
   gap: 48px;
-  align-items: start;
-  transition: background 0.2s ease;
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
 }
 
-.experience-item:last-child { border-bottom: 1px solid var(--border); }
-
-.experience-item:hover { background: var(--bg-alt); margin: 0 -24px; padding-left: 24px; padding-right: 24px; }
-
-@media (max-width: 900px) {
-  .experience-item {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    padding: 40px 0;
-  }
-  .experience-item:hover { margin: 0; padding: 40px 0; }
+.experience-item:last-child {
+  border-bottom: 1px solid var(--border);
 }
 
-.experience-period {
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--text-subtle);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding-top: 4px;
-}
-
-.experience-title {
-  font-family: var(--serif);
-  font-size: 26px;
-  font-weight: 400;
-  line-height: 1.2;
-  color: var(--text);
-  margin-bottom: 8px;
-}
-
-.experience-company {
-  font-size: 14px;
-  color: var(--text-muted);
-  margin-bottom: 20px;
+.experience-date {
+  font-size: 13px;
   font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
 }
 
-.experience-desc {
+.experience-content h4 {
+  font-family: 'Inter Tight', 'Inter', sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+
+.experience-content .org {
   font-size: 15px;
-  color: var(--text);
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+
+.experience-content .desc {
+  font-size: 15px;
   line-height: 1.6;
-  max-width: 600px;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  font-weight: 300;
 }
 
 .experience-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  padding-top: 4px;
 }
 
-.experience-tag {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--text-muted);
+.experience-tags span {
+  font-size: 12px;
+  color: var(--navy);
   padding: 4px 10px;
-  border: 1px solid var(--border-strong);
-  border-radius: 2px;
-  letter-spacing: 0.05em;
+  background: var(--navy-tint);
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+@media (max-width: 700px) {
+  .experience-item {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 }
 
 /* CAPABILITIES */
 .capabilities-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 0;
-  border-top: 1px solid var(--border);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px 32px;
+  padding: 32px 0 48px;
 }
 
-.capability-block {
-  padding: 40px 40px 40px 0;
-  border-bottom: 1px solid var(--border);
-  border-right: 1px solid var(--border);
+.capability-item {
+  padding-top: 24px;
+  border-top: 1px solid var(--navy);
 }
 
-.capability-block:nth-child(3n) { border-right: none; }
-
-@media (max-width: 900px) {
-  .capability-block {
-    border-right: none;
-    padding: 32px 0;
-  }
-}
-
-.capability-number {
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--accent-warm);
-  letter-spacing: 0.1em;
-  margin-bottom: 16px;
-}
-
-.capability-title {
-  font-family: var(--serif);
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 1.3;
-  color: var(--text);
+.capability-num {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--navy);
+  letter-spacing: 0.15em;
   margin-bottom: 12px;
 }
 
-.capability-desc {
+.capability-item h4 {
+  font-family: 'Inter Tight', 'Inter', sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+}
+
+.capability-item p {
   font-size: 14px;
-  color: var(--text-muted);
   line-height: 1.6;
+  color: var(--text-secondary);
+  font-weight: 300;
 }
 
 /* TOOLS */
-.tools-section {
-  padding-top: 80px;
+.tools {
+  padding: 32px 0 48px;
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
 }
 
-.tools-label {
-  font-family: var(--mono);
+.tools .label {
   font-size: 11px;
-  color: var(--text-subtle);
-  text-transform: uppercase;
+  font-weight: 500;
   letter-spacing: 0.15em;
-  margin-bottom: 24px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 20px;
 }
 
 .tools-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 12px 20px;
 }
 
-.tool-item {
-  font-family: var(--mono);
-  font-size: 13px;
-  color: var(--text);
-  padding: 8px 16px;
-  border: 1px solid var(--border-strong);
-  background: var(--bg);
-  border-radius: 2px;
+.tools-list span {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 400;
 }
 
 /* EDUCATION */
-.education-block {
-  display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 80px;
-  padding: 40px 0;
+.education {
+  padding: 48px 0;
+  border-top: 1px solid var(--border);
 }
 
-@media (max-width: 900px) {
-  .education-block { grid-template-columns: 1fr; gap: 16px; }
+.education-item {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 48px;
+  padding: 32px 0;
 }
 
 .education-year {
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--text-subtle);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding-top: 8px;
-}
-
-.education-degree {
-  font-family: var(--serif);
-  font-size: 28px;
-  font-weight: 400;
-  line-height: 1.2;
-  margin-bottom: 8px;
-}
-
-.education-school {
-  font-size: 15px;
+  font-size: 13px;
+  font-weight: 500;
   color: var(--text-muted);
+}
+
+.education-content h4 {
+  font-family: 'Inter Tight', 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.education-content .org {
+  font-size: 15px;
+  color: var(--text-secondary);
   margin-bottom: 12px;
 }
 
-.education-focus {
+.education-content .desc {
   font-size: 14px;
-  color: var(--text-muted);
   line-height: 1.6;
-  max-width: 600px;
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+
+@media (max-width: 700px) {
+  .education-item {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
 }
 
 /* CONTACT */
 .contact {
-  padding: 160px 0;
-  background: var(--bg-alt);
-  border-bottom: none;
-}
-
-.contact-title {
-  font-family: var(--serif);
-  font-size: clamp(48px, 7vw, 88px);
-  font-weight: 400;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  margin-bottom: 48px;
-  max-width: 900px;
-}
-
-.contact-title em {
-  font-style: italic;
-  color: var(--accent-warm);
-}
-
-.contact-details {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 40px;
-  max-width: 900px;
-  padding-top: 40px;
-  border-top: 1px solid var(--border-strong);
-}
-
-.contact-item-label {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--text-subtle);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 8px;
-}
-
-.contact-item-value {
-  font-size: 17px;
-  color: var(--text);
-  font-weight: 500;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-a.contact-item-value:hover { color: var(--accent-warm); }
-
-/* FOOTER */
-footer {
-  padding: 40px 0;
-  background: var(--bg);
+  padding: 96px 0 64px;
   border-top: 1px solid var(--border);
 }
 
-.footer-inner {
+.contact h2 {
+  font-family: 'Inter Tight', 'Inter', sans-serif;
+  font-size: clamp(32px, 4vw, 44px);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 56px;
+  max-width: 720px;
+}
+
+.contact h2 em {
+  font-style: italic;
+  color: var(--navy);
+  font-weight: 400;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px 32px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+
+.contact-item .label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.contact-item .value {
+  font-size: 15px;
+  color: var(--text-primary);
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.contact-item a {
+  color: var(--navy);
+  text-decoration: none;
+  border-bottom: 1px solid var(--navy-light);
+  padding-bottom: 1px;
+  transition: border-color 0.2s ease;
+}
+
+.contact-item a:hover {
+  border-bottom-color: var(--navy);
+}
+
+/* FOOTER */
+footer {
+  padding: 48px 0 64px;
+  border-top: 1px solid var(--border);
+}
+
+footer .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -645,20 +610,21 @@ footer {
   gap: 16px;
 }
 
-.footer-text {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--text-subtle);
-  letter-spacing: 0.05em;
+footer .copyright,
+footer .version {
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
 }
+
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-inner">
-    <a href="#top" class="nav-brand">Antonio Garcia</a>
-    <ul class="nav-links">
+  <div class="container">
+    <a href="#top" class="brand">Antonio Garcia</a>
+    <ul>
       <li><a href="#work">Work</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#capabilities">Capabilities</a></li>
@@ -667,138 +633,109 @@ footer {
   </div>
 </nav>
 
-<section class="hero" id="top" style="border-bottom: none;">
+<section id="top" class="hero">
   <div class="container">
-    <div class="hero-meta">Portfolio, 2026</div>
-    <h1 class="hero-title">
-      Design and motion graphics for <em>defense, federal, and mission-critical</em> environments.
-    </h1>
-    <p class="hero-lede">
-      Multidisciplinary designer producing executive communications, technical documentation, and motion graphics for cleared programs and federal contracting environments.
-    </p>
-    <div class="hero-details">
-      <div>
-        <div class="hero-detail-label">Based</div>
-        <div class="hero-detail-value">Washington, DC Metro</div>
+    <div class="eyebrow">Portfolio, 2026</div>
+    <h1>Design, data visualization, and motion graphics for <em>defense, federal, and mission-critical</em> environments.</h1>
+    <p class="lead">Multidisciplinary designer producing executive briefings, data visualization, technical documentation, and motion graphics for cleared programs and federal contracting environments.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <div class="label">Based</div>
+        <div class="value">Washington, DC Metro</div>
       </div>
-      <div>
-        <div class="hero-detail-label">Clearance</div>
-        <div class="hero-detail-value">Active DoD Secret</div>
+      <div class="hero-meta-item">
+        <div class="label">Clearance</div>
+        <div class="value">Active DoD Secret</div>
       </div>
-      <div>
-        <div class="hero-detail-label">Experience</div>
-        <div class="hero-detail-value">Six years, cleared and commercial</div>
+      <div class="hero-meta-item">
+        <div class="label">Experience</div>
+        <div class="value">Six years, cleared and commercial</div>
       </div>
-      <div>
-        <div class="hero-detail-label">Status</div>
-        <div class="hero-detail-value">Available for remote roles</div>
+      <div class="hero-meta-item">
+        <div class="label">Status</div>
+        <div class="value">Available for remote roles</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="case-study" id="work">
+<section id="work">
   <div class="container">
-    <div class="section-label">Featured Case Study, 001</div>
-    <h2 class="section-title">Federal Graphic Design Portfolio</h2>
-    <p class="section-lede">
-      A complete visual identity, executive briefing template, and cyber operations data visualization system, developed as a comprehensive demonstration of end-to-end federal design capability.
-    </p>
-
-    <div class="case-header">
-      <div class="case-meta-grid">
-        <div class="case-meta-item">
-          <div class="case-meta-label">Client</div>
-          <div class="case-meta-value">Portfolio Project, Fictional Agency</div>
-        </div>
-        <div class="case-meta-item">
-          <div class="case-meta-label">Year</div>
-          <div class="case-meta-value">2025</div>
-        </div>
-        <div class="case-meta-item">
-          <div class="case-meta-label">Role</div>
-          <div class="case-meta-value">Sole Designer, Concept to Delivery</div>
-        </div>
-        <div class="case-meta-item">
-          <div class="case-meta-label">Discipline</div>
-          <div class="case-meta-value">Brand System, Data Viz, Executive Comms</div>
-        </div>
-      </div>
-
-      <div class="case-image-block" style="padding: 0; border: 1px solid var(--border-strong);">
-        <img src="cover page.png" alt="Federal Graphic Design Portfolio cover page featuring ODSM branding">
-      </div>
+    <div class="section-header">
+      <div class="eyebrow">Selected Work, 2024 to 2026</div>
+      <h2>Five case studies in <em>federal design, data visualization, and executive communications</em>.</h2>
     </div>
 
-    <div class="case-content">
-      <div class="case-content-label">Overview</div>
-      <div class="case-content-body">
-        <p>
-          The Office of Data Strategy and Modernization is a fictional agency created as a design vehicle to demonstrate the full range of visual work required in federal and defense environments. The project addresses a real gap in cleared portfolio work, where restrictions on client materials often leave designers with nothing to show reviewers.
-        </p>
-        <p>
-          The system was developed from scratch as an original design language. It carries a fictional Great Seal, a proprietary color palette, and a modular typographic system, all built to withstand the scrutiny of federal design reviewers while remaining flexible across executive briefings, operational dashboards, and stakeholder communications.
-        </p>
-      </div>
-    </div>
-
-    <div class="case-content">
-      <div class="case-content-label">Approach</div>
-      <div class="case-content-body">
-        <p>
-          The visual language was calibrated to sit between two federal design traditions. Traditional government branding leans on heavy blue palettes and dense typography. Modern defense contractor design, from firms like Palantir and Anduril, favors editorial restraint and technical clarity. This system draws from both, using a navy base for institutional weight and generous negative space for readability under briefing conditions.
-        </p>
-        <p>
-          Every artifact was designed to a real use case. The branded stationery supports agency correspondence. The executive briefing template accommodates the Q2 program review format common in federal reporting. The cyber operations dashboard was built to communicate threat severity, incident status, and trend data at a glance, drawing on established conventions in security operations reporting.
-        </p>
-      </div>
-    </div>
-
-    <div class="case-images">
-      <div class="case-image-block">
-        <img src="Branded Materials.png" alt="Branded materials including letterhead, business cards, and stationery for ODSM">
-        <div class="case-image-caption">
-          <div class="case-caption-label">Brand System</div>
-          <div class="case-caption-text">
-            Letterhead, business cards, and stationery system establishing typographic hierarchy, color application, and layout rules for internal and external communications.
-          </div>
+    <!-- CASE STUDY 001 - EXISTING ODSM -->
+    <article class="case-study">
+      <div class="eyebrow">Featured Case Study, 001</div>
+      <h3>Federal Graphic Design Portfolio</h3>
+      <p class="description">A complete visual identity, executive briefing template, and cyber operations data visualization system, developed as a comprehensive demonstration of end-to-end federal design capability.</p>
+      <div class="case-meta">
+        <div class="case-meta-item">
+          <div class="label">Client</div>
+          <div class="value">Portfolio Project, Fictional Agency</div>
+        </div>
+        <div class="case-meta-item">
+          <div class="label">Year</div>
+          <div class="value">2025</div>
+        </div>
+        <div class="case-meta-item">
+          <div class="label">Role</div>
+          <div class="value">Sole Designer, Concept to Delivery</div>
+        </div>
+        <div class="case-meta-item">
+          <div class="label">Discipline</div>
+          <div class="value">Brand System, Data Viz, Executive Comms</div>
         </div>
       </div>
 
-      <div class="case-image-block">
-        <img src="PowerPoint.png" alt="PowerPoint executive briefing template showing program overview and key outcomes layout">
+      <div class="case-image-wrapper">
+        <img src="cover%20page.png" alt="Federal Graphic Design Portfolio cover page featuring ODSM branding" class="case-image">
+      </div>
+
+      <div class="case-section-header">Overview</div>
+      <p class="case-body">The Office of Data Strategy and Modernization is a fictional agency created as a design vehicle to demonstrate the full range of visual work required in federal and defense environments. The project addresses a real gap in cleared portfolio work, where restrictions on client materials often leave designers with nothing to show reviewers.</p>
+      <p class="case-body">The system was developed from scratch as an original design language. It carries a fictional Great Seal, a proprietary color palette, and a modular typographic system, all built to withstand the scrutiny of federal design reviewers while remaining flexible across executive briefings, operational dashboards, and stakeholder communications.</p>
+
+      <div class="case-section-header">Approach</div>
+      <p class="case-body">The visual language was calibrated to sit between two federal design traditions. Traditional government branding leans on heavy blue palettes and dense typography. Modern defense contractor design, from firms like Palantir and Anduril, favors editorial restraint and technical clarity. This system draws from both, using a navy base for institutional weight and generous negative space for readability under briefing conditions.</p>
+      <p class="case-body">Every artifact was designed to a real use case. The branded stationery supports agency correspondence. The executive briefing template accommodates the Q2 program review format common in federal reporting. The cyber operations dashboard was built to communicate threat severity, incident status, and trend data at a glance, drawing on established conventions in security operations reporting.</p>
+
+      <div class="case-image-wrapper">
+        <img src="Branded%20Materials.png" alt="Branded materials including letterhead, business cards, and stationery for ODSM" class="case-image">
         <div class="case-image-caption">
-          <div class="case-caption-label">Executive Briefing Template</div>
-          <div class="case-caption-text">
-            Modular slide system supporting program overview, strategic initiative tracking, and key metrics reporting. Designed for rapid population during quarterly review cycles.
-          </div>
+          <strong>Brand System</strong>
+          Letterhead, business cards, and stationery system establishing typographic hierarchy, color application, and layout rules for internal and external communications.
         </div>
       </div>
 
-      <div class="case-image-block">
-        <img src="Data Visualization.png" alt="Cyber incident dashboard showing threat severity, incident status, and trend data">
+      <div class="case-image-wrapper">
+        <img src="PowerPoint.png" alt="PowerPoint executive briefing template showing program overview and key outcomes layout" class="case-image">
         <div class="case-image-caption">
-          <div class="case-caption-label">Cyber Operations Dashboard</div>
-          <div class="case-caption-text">
-            Data visualization system communicating threat severity distribution, incident status by category, and month-over-month trend data. Layout prioritizes glance-readability for command briefings.
-          </div>
+          <strong>Executive Briefing Template</strong>
+          Modular slide system supporting program overview, strategic initiative tracking, and key metrics reporting. Designed for rapid population during quarterly review cycles.
         </div>
       </div>
 
-      <div class="case-image-block">
-        <img src="closeout.png" alt="Project closeout summary page">
+      <div class="case-image-wrapper">
+        <img src="Data%20Visualization.png" alt="Cyber incident dashboard showing threat severity, incident status, and trend data" class="case-image">
         <div class="case-image-caption">
-          <div class="case-caption-label">Program Closeout</div>
-          <div class="case-caption-text">
-            Summary and reporting layout completing the executive communications cycle, from initial briefing through interim review to program closeout.
-          </div>
+          <strong>Cyber Operations Dashboard</strong>
+          Data visualization system communicating threat severity distribution, incident status by category, and month-over-month trend data. Layout prioritizes glance-readability for command briefings.
         </div>
       </div>
-    </div>
 
-    <div class="case-deliverables">
-      <div class="case-content-label">Deliverables</div>
-      <ul class="deliverables-list">
+      <div class="case-image-wrapper">
+        <img src="closeout.png" alt="Project closeout summary page" class="case-image">
+        <div class="case-image-caption">
+          <strong>Program Closeout</strong>
+          Summary and reporting layout completing the executive communications cycle, from initial briefing through interim review to program closeout.
+        </div>
+      </div>
+
+      <div class="case-section-header">Deliverables</div>
+      <ul class="case-deliverables">
         <li>Complete brand identity system, seal, palette, and type</li>
         <li>Business card and letterhead set</li>
         <li>Executive briefing PowerPoint template</li>
@@ -806,176 +743,382 @@ footer {
         <li>Program summary and closeout templates</li>
         <li>Chart and infographic library</li>
       </ul>
-    </div>
+    </article>
+
+    <!-- CASE STUDY 002 - CHART 1 CYBERSECURITY WORKFORCE -->
+    <article class="case-study">
+      <div class="eyebrow">Case Study, 002</div>
+      <h3>Federal Cybersecurity Workforce Analysis</h3>
+      <p class="description">A grouped horizontal bar chart visualizing authorized versus filled cybersecurity positions across eight federal agencies, adapted from OPM federal workforce reporting.</p>
+      <div class="case-meta">
+        <div class="case-meta-item">
+          <div class="label">Client</div>
+          <div class="value">Independent Analysis, Public Data</div>
+        </div>
+        <div class="case-meta-item">
+          <div class="label">Year</div>
+          <div class="value">2026</div>
+        </div>
+        <div class="case-meta-item">
+          <div class="label">Role</div>
+          <div class="value">Sole Designer, Raw Data to Final Visual</div>
+        </div>
+        <div class="case-meta-item">
+          <div class="label">Discipline</div>
+          <div class="value">Data Visualization, Federal Reporting</div>
+        </div>
+      </div>
+
+      <div class="case-section-header">Overview</div>
+      <p class="case-body">This chart supports leadership decision-making by making the gap between authorized and filled cybersecurity positions immediately visible across eight federal agencies. It was built end-to-end from raw messy source data through cleaning, aggregation, and final chart design, in a form suitable for a decision brief or executive dashboard.</p>
+
+      <div class="case-image-wrapper">
+        <img src="images/chart1_final.png" alt="Grouped horizontal bar chart showing authorized versus on-board federal cybersecurity positions across eight agencies, with vacancy count sidebar" class="case-image">
+        <div class="case-image-caption">
+          <strong>Final Visual</strong>
+          Grouped horizontal bars sorted by vacancy count descending. Vacancy count sidebar on the right makes the key insight scannable independent of interpreting bar-length differences.
+        </div>
+      </div>
+
+      <div class="case-section-header">Chart Choice Rationale</div>
+      <p class="case-body">Grouped horizontal bars were selected over a stacked bar or dual-axis alternative because the primary insight is the gap between authorized and filled positions per agency, not a cumulative total or trend. Bars are sorted by vacancy count descending so the reader's attention lands on the largest gaps first, and horizontal orientation accommodates long agency names without truncation. The vacancy count sidebar surfaces the key insight in a form that can be read without measuring bar length.</p>
+    </article>
+
+    <!-- CASE STUDY 003 - CHART 2 DOD CONTRACT TREND -->
+    <article class="case-study">
+      <div class="eyebrow">Case Study, 003</div>
+      <h3>Department of Defense Contract Trend Analysis</h3>
+      <p class="description">A six-year area chart visualizing Department of Defense prime contract obligations across fiscal years 2019 through 2024, adapted from USA Spending federal contract reporting.</p>
+      <div class="case-meta">
+        <div class="case-meta-item">
+          <div class="label">Client</div>
+          <div class="value">Independent Analysis, Public Data</div>
+        </div>
+        <div class="case-meta-item">
+          <div class="label">Year</div>
+          <div class="value">2026</div>
+        </div>
+        <div class="case-meta-item">
+          <div class="label">Role</div>
+          <div class="value">Sole Designer, Raw Data to Final Visual</div>
+        </div>
+        <div class="case-meta-item">
+          <div class="label">Discipline</div>
+          <div class="value">Data Visualization, Time-Series Analysis</div>
+        </div>
+      </div>
+
+      <div class="case-section-header">Overview</div>
+      <p class="case-body">This chart communicates the growth trajectory of DoD prime contract obligations across six fiscal years, in a form intended for a decision brief or executive audience. The source data arrived quarterly and required cleaning, standardization of agency naming, and aggregation to annual totals before the final visual could be designed.</p>
+
+      <div class="data-progression">
+        <div class="step">
+          <div class="step-label">Step 01</div>
+          <div class="step-title">Raw Source Data</div>
+          <img src="images/chart2_raw_data.png" alt="Raw messy source data showing quarterly DoD contract obligations with inconsistent agency naming and redundant columns" class="step-image">
+        </div>
+        <div class="step">
+          <div class="step-label">Step 02</div>
+          <div class="step-title">Cleaned and Aggregated</div>
+          <img src="images/chart2_clean_data.png" alt="Cleaned aggregated data showing annual DoD contract obligation totals from fiscal year 2019 through 2024" class="step-image">
+        </div>
+        <div class="step">
+          <div class="step-label">Step 03</div>
+          <div class="step-title">Final Visual</div>
+          <img src="images/chart2_final.png" alt="Area chart showing Department of Defense prime contract obligations growth from fiscal year 2019 through 2024, with FY2024 callout highlighting $489.8 billion" class="step-image">
+        </div>
+      </div>
+
+      <div class="case-section-header">Chart Choice Rationale</div>
+      <p class="case-body">The area chart was selected over a line-only or bar chart because the story is both directional trend and accumulated magnitude of federal contract growth. The filled area emphasizes the scale of the increase over six fiscal years, while the connecting line preserves precise year-over-year change. A bar chart would fragment the continuity of the trend. The FY2024 callout was added to draw the eye to the current-year takeaway without requiring the reader to interpret the endpoint themselves.</p>
+    </article>
+
+    <!-- CASE STUDY 004 - CHART 3 REGIONAL DISTRIBUTION -->
+    <article class="case-study">
+      <div class="eyebrow">Case Study, 004</div>
+      <h3>Federal Prime Contract Regional Distribution</h3>
+      <p class="description">A single-series horizontal bar chart visualizing the regional distribution of federal prime contract awards for fiscal year 2024, adapted from USA Spending contract data.</p>
+      <div class="case-meta">
+        <div class="case-meta-item">
+          <div class="label">Client</div>
+          <div class="value">Independent Analysis, Public Data</div>
+        </div>
+        <div class="case-meta-item">
+          <div class="label">Year</div>
+          <div class="value">2026</div>
+        </div>
+        <div class="case-meta-item">
+          <div class="label">Role</div>
+          <div class="value">Sole Designer, Raw Data to Final Visual</div>
+        </div>
+        <div class="case-meta-item">
+          <div class="label">Discipline</div>
+          <div class="value">Data Visualization, Geographic Comparison</div>
+        </div>
+      </div>
+
+      <div class="case-section-header">Overview</div>
+      <p class="case-body">This chart visualizes the regional distribution of federal prime contract awards for fiscal year 2024, covering six regional groupings and $103.4 billion in total analyzed value. The source data arrived at the state level and required aggregation to regional totals and percentage calculation before the final visual could be designed.</p>
+
+      <div class="data-progression">
+        <div class="step">
+          <div class="step-label">Step 01</div>
+          <div class="step-title">Raw Source Data</div>
+          <img src="images/chart3_raw_data.png" alt="Raw messy state-level federal contract data with inconsistent categorization and redundant columns" class="step-image">
+        </div>
+        <div class="step">
+          <div class="step-label">Step 02</div>
+          <div class="step-title">Cleaned and Aggregated</div>
+          <img src="images/chart3_clean_data.png" alt="Cleaned data showing federal prime contract totals aggregated by region with percentage of national total" class="step-image">
+        </div>
+        <div class="step">
+          <div class="step-label">Step 03</div>
+          <div class="step-title">Final Visual</div>
+          <img src="images/chart3_final.png" alt="Horizontal bar chart showing federal prime contract awards by region for fiscal year 2024, with dollar values and percentages" class="step-image">
+        </div>
+      </div>
+
+      <div class="case-section-header">Chart Choice Rationale</div>
+      <p class="case-body">A simple horizontal bar chart was selected over a pie chart or 100 percent stacked bar because the audience needs to compare regional totals directly and read exact values. The bars are sorted from largest to smallest so the concentration of contract value in the Southeast is immediately visible. Each label pairs the absolute dollar amount with its percentage of national total, allowing the reader to work in either dimension without a separate legend or reference table.</p>
+    </article>
+
+    <!-- CASE STUDY 005 - BEFORE/AFTER -->
+    <article class="case-study">
+      <div class="eyebrow">Case Study, 005</div>
+      <h3>Program Performance Briefing Redesign</h3>
+      <p class="description">A before-and-after demonstration of visual rebuild discipline applied to a Q3 program performance briefing slide, showing how information architecture and restrained typography can reduce cognitive load without removing information.</p>
+      <div class="case-meta">
+        <div class="case-meta-item">
+          <div class="label">Client</div>
+          <div class="value">Independent Portfolio Project</div>
+        </div>
+        <div class="case-meta-item">
+          <div class="label">Year</div>
+          <div class="value">2026</div>
+        </div>
+        <div class="case-meta-item">
+          <div class="label">Role</div>
+          <div class="value">Sole Designer, Original and Rebuild</div>
+        </div>
+        <div class="case-meta-item">
+          <div class="label">Discipline</div>
+          <div class="value">Executive Presentation, Information Architecture</div>
+        </div>
+      </div>
+
+      <div class="case-section-header">Overview</div>
+      <p class="case-body">The original slide is representative of common failures seen in federal program reporting: high content density, competing color systems, inconsistent typography, and no clear visual hierarchy. The rebuild preserves the same underlying information while reducing surfaced content, unifying typography, and imposing a consistent color and layout system.</p>
+
+      <div class="case-image-wrapper">
+        <img src="images/before_slide.png" alt="Original Q3 program performance briefing slide with high content density, competing colors, inconsistent typography, and no visual hierarchy" class="case-image">
+        <div class="case-image-caption">
+          <strong>Before</strong>
+          The original slide packs twelve bullet points, a nine-column data table, competing accent colors, mixed typography, and decorative clip-art into a single screen. Multiple systems compete for attention with no visual hierarchy to guide the reader.
+        </div>
+      </div>
+
+      <div class="case-image-wrapper">
+        <img src="images/after_slide.png" alt="Rebuilt Q3 program performance briefing slide with clean typography, three key metric callouts, and simplified budget table" class="case-image">
+        <div class="case-image-caption">
+          <strong>After</strong>
+          The rebuild surfaces three key metric callouts, four highlight bullets, and a simplified budget and schedule table. Typography reduces to one family with two weights. Palette reduces to navy and light blue over white, with a subtle accent for the eyebrow header.
+        </div>
+      </div>
+
+      <div class="case-section-header">Design Rationale</div>
+      <p class="case-body">The rebuild applies four principles common to federal decision-brief design. First, information hierarchy is imposed: the three metrics that matter most are lifted into card callouts at the top, and the remaining content is subordinated. Second, the color system is reduced to two supporting colors plus surface white, removing the visual noise of competing accent hues. Third, typography reduces to one family and two weights, eliminating the tonal competition of mixed serifs and italics. Fourth, the data table is redesigned with generous row spacing, subtle alternating shading, and a total row that anchors the summary.</p>
+      <p class="case-body">The reader can identify the main takeaway of the rebuilt slide in under five seconds. The original slide requires the reader to search for structure that was not designed in.</p>
+    </article>
   </div>
 </section>
 
+<!-- EXPERIENCE -->
 <section id="experience">
   <div class="container">
-    <div class="section-label">Experience, 2020 to Present</div>
-    <h2 class="section-title">Cleared and federal contracting environments.</h2>
+    <div class="section-header">
+      <div class="eyebrow">Experience, 2020 to Present</div>
+      <h2>Cleared, federal, and independent design environments.</h2>
+    </div>
 
     <div class="experience-list">
       <div class="experience-item">
-        <div class="experience-period">2026, Feb to Jul</div>
-        <div>
-          <h3 class="experience-title">Motion Graphics and Technical Communications Designer</h3>
-          <div class="experience-company">Forward Edge AI, Defense AI Contractor</div>
-          <p class="experience-desc">
-            Produced end-to-end motion graphics for a defense AI platform, including animated interface walkthroughs, branded intro and outro systems, technical training videos, and executive briefing packages distributed to external government partners. Designed reference materials for internal engineering teams and rebuilt dense technical documentation into layered data visualizations for stakeholder review.
-          </p>
-        </div>
-        <div class="experience-tags">
-          <span class="experience-tag">Motion Graphics</span>
-          <span class="experience-tag">Data Viz</span>
-          <span class="experience-tag">Executive Comms</span>
-        </div>
-      </div>
-
-      <div class="experience-item">
-        <div class="experience-period">2024 to 2025</div>
-        <div>
-          <h3 class="experience-title">Mission Communication Support</h3>
-          <div class="experience-company">Constellis, DHS Federal Contract</div>
-          <p class="experience-desc">
-            Produced visual activity and incident reports for a Department of Homeland Security operational contract. Work required strict adherence to federal reporting guidelines, Section 508 accessibility standards, and rapid revision cycles in support of stakeholder communications.
-          </p>
-        </div>
-        <div class="experience-tags">
-          <span class="experience-tag">Federal Reporting</span>
-          <span class="experience-tag">508 Compliance</span>
-          <span class="experience-tag">Incident Reports</span>
+        <div class="experience-date">2026, Feb to Jul</div>
+        <div class="experience-content">
+          <h4>Business Analyst and Content Creator</h4>
+          <div class="org">Forward Edge AI, Defense AI Contractor</div>
+          <p class="desc">Produced executive briefing packages for a flagship defense AI platform, translating complex technical systems into narratives for government buyers, defense partners, and investors. Designed dual-audience product roadmaps for senior executive review and external procurement audiences. Built infographics, data visualizations, and slide systems applied across recurring briefing cycles. Applied federal accessibility guidelines to multimedia deliverables under senior designer direction.</p>
+          <div class="experience-tags">
+            <span>Executive Briefings</span>
+            <span>Data Visualization</span>
+            <span>Motion Graphics</span>
+            <span>Accessibility</span>
+          </div>
         </div>
       </div>
 
       <div class="experience-item">
-        <div class="experience-period">2020 to 2024</div>
-        <div>
-          <h3 class="experience-title">Multidisciplinary Design Practice</h3>
-          <div class="experience-company">Contract and Independent Work</div>
-          <p class="experience-desc">
-            Four years of contract and independent design work spanning brand identity systems, motion graphics, technical documentation, and executive presentation design. Portfolio includes work for federal-adjacent, entertainment, and commercial clients, with emphasis on building visual systems that scale across formats and stakeholder audiences.
-          </p>
+        <div class="experience-date">2025, Oct to Present</div>
+        <div class="experience-content">
+          <h4>Founder and Lead Graphic Designer</h4>
+          <div class="org">Echolume LLC, Independent Design Studio</div>
+          <p class="desc">Founded and operate an independent design studio serving music, film, and entertainment clients. Produce brand identity systems, motion graphics, digital content, and presentation materials from concept through final delivery. Manage full production lifecycle across concurrent projects and maintain cross-platform visual consistency across client systems.</p>
+          <div class="experience-tags">
+            <span>Brand Systems</span>
+            <span>Motion Graphics</span>
+            <span>Client Delivery</span>
+          </div>
         </div>
-        <div class="experience-tags">
-          <span class="experience-tag">Brand Systems</span>
-          <span class="experience-tag">Motion</span>
-          <span class="experience-tag">Presentation Design</span>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience-date">2024 to 2025</div>
+        <div class="experience-content">
+          <h4>Graphic Designer, Mission Communication Support</h4>
+          <div class="org">Constellis, DHS Federal Contract</div>
+          <p class="desc">Produced recurring visual activity and incident reports for a Department of Homeland Security operational contract on a strict daily and weekly publishing schedule. Work required strict adherence to federal reporting guidelines, Section 508 accessibility considerations, and rapid revision cycles in support of stakeholder communications.</p>
+          <div class="experience-tags">
+            <span>Federal Reporting</span>
+            <span>508 Compliance</span>
+            <span>Incident Reports</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience-date">2020 to 2024</div>
+        <div class="experience-content">
+          <h4>Independent Graphic Designer</h4>
+          <div class="org">Contract and Independent Work</div>
+          <p class="desc">Delivered brand identity systems, motion graphics, technical documentation, digital content, and multimedia assets for 15+ small business, entertainment, and entrepreneurial clients. Selected engagements include Tallee (AI-based event discovery platform), CSWS Consulting (corporate consulting), Fur Ever Foxy (pet grooming studio), and storyboard and design support for J. Odell Productions on a promotional commercial for Pure Green (Washington, DC).</p>
+          <div class="experience-tags">
+            <span>Brand Systems</span>
+            <span>Storyboarding</span>
+            <span>Web Design</span>
+            <span>Presentation Design</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience-date">2020, Jun to Nov</div>
+        <div class="experience-content">
+          <h4>Graphic Design Intern</h4>
+          <div class="org">DC Row, Sister Company of CWP Consultant</div>
+          <p class="desc">Developed and executed 30-day social media editorial calendars across Instagram, Twitter, Facebook, and YouTube for a boutique fitness studio. Designed static and animated graphics for scheduled deployment across multiple platforms. Reviewed platform analytics to inform content decisions and refine visual strategy, and coordinated with senior staff on posting cadence, campaign strategy, and brand consistency.</p>
+          <div class="experience-tags">
+            <span>Content Calendars</span>
+            <span>Multi-Platform Publishing</span>
+            <span>Platform Analytics</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- CAPABILITIES -->
 <section id="capabilities">
   <div class="container">
-    <div class="section-label">Capabilities</div>
-    <h2 class="section-title">Six core disciplines.</h2>
-    <p class="section-lede">
-      The work spans motion graphics, executive communications, and technical documentation, with output calibrated to the review standards of federal and defense contracting environments.
-    </p>
+    <div class="section-header">
+      <div class="eyebrow">Capabilities</div>
+      <h2>Six core disciplines.</h2>
+      <p class="case-body" style="margin-top: 24px;">The work spans executive communications, data visualization, motion graphics, and technical documentation, with output calibrated to the review standards of federal and defense contracting environments.</p>
+    </div>
 
     <div class="capabilities-grid">
-      <div class="capability-block">
-        <div class="capability-number">01</div>
-        <h3 class="capability-title">Motion Graphics and Animation</h3>
-        <p class="capability-desc">Animated interface walkthroughs, branded intro and outro systems, voiceover sync, technical training video, and demonstration reels for defense and commercial platforms.</p>
+      <div class="capability-item">
+        <div class="capability-num">01</div>
+        <h4>Executive Communications</h4>
+        <p>Briefing packages, technical reports, product roadmaps, and stakeholder presentations designed for distribution to senior leadership and external government partners.</p>
       </div>
-
-      <div class="capability-block">
-        <div class="capability-number">02</div>
-        <h3 class="capability-title">Executive Communications</h3>
-        <p class="capability-desc">Briefing packages, technical reports, product roadmaps, and stakeholder presentations designed for distribution to leadership and external government partners.</p>
+      <div class="capability-item">
+        <div class="capability-num">02</div>
+        <h4>Data Visualization</h4>
+        <p>Charts built from raw source data, operational dashboards, technical infographics, and information design translating dense technical documentation into layered visual reference material.</p>
       </div>
-
-      <div class="capability-block">
-        <div class="capability-number">03</div>
-        <h3 class="capability-title">Data Visualization</h3>
-        <p class="capability-desc">Operational dashboards, technical infographics, network architecture diagrams, and information design translating dense technical documentation into layered visual reference material.</p>
+      <div class="capability-item">
+        <div class="capability-num">03</div>
+        <h4>Presentation Design</h4>
+        <p>Slide master and layout systems, modular briefing templates, and rebuild of inherited slides for hierarchy, restraint, and glance-readability under briefing conditions.</p>
       </div>
-
-      <div class="capability-block">
-        <div class="capability-number">04</div>
-        <h3 class="capability-title">Brand Identity Systems</h3>
-        <p class="capability-desc">Complete visual identity development including logo systems, color and typographic standards, style guides, and template libraries that scale across departments and stakeholder groups.</p>
+      <div class="capability-item">
+        <div class="capability-num">04</div>
+        <h4>Brand Identity Systems</h4>
+        <p>Complete visual identity development including logo systems, color and typographic standards, style guides, and template libraries that scale across departments and stakeholder groups.</p>
       </div>
-
-      <div class="capability-block">
-        <div class="capability-number">05</div>
-        <h3 class="capability-title">Technical Documentation</h3>
-        <p class="capability-desc">Reference guides, naming convention systems, product documentation, and interactive PDF development, produced under federal reporting guidelines and 508 accessibility standards.</p>
+      <div class="capability-item">
+        <div class="capability-num">05</div>
+        <h4>Motion Graphics and Animation</h4>
+        <p>Animated interface walkthroughs, branded intro and outro systems, voiceover sync, technical training video, and demonstration reels for defense and commercial platforms.</p>
       </div>
-
-      <div class="capability-block">
-        <div class="capability-number">06</div>
-        <h3 class="capability-title">Video Production Support</h3>
-        <p class="capability-desc">Video scripting, storyboarding, Frame.io review cycles, Camtasia and Powtoon production, and layered motion graphics over live footage in sync with subject matter expert voiceover.</p>
+      <div class="capability-item">
+        <div class="capability-num">06</div>
+        <h4>Technical Documentation</h4>
+        <p>Reference guides, naming convention systems, product documentation, and interactive PDF development, produced under federal reporting guidelines and 508 accessibility standards.</p>
       </div>
     </div>
 
-    <div class="tools-section">
-      <div class="tools-label">Tools and Platforms</div>
+    <div class="tools">
+      <div class="label">Tools and Platforms</div>
       <div class="tools-list">
-        <span class="tool-item">Photoshop</span>
-        <span class="tool-item">Illustrator</span>
-        <span class="tool-item">InDesign</span>
-        <span class="tool-item">After Effects</span>
-        <span class="tool-item">Premiere Pro</span>
-        <span class="tool-item">Frame.io</span>
-        <span class="tool-item">Camtasia</span>
-        <span class="tool-item">Powtoon</span>
-        <span class="tool-item">draw.io</span>
-        <span class="tool-item">PowerPoint</span>
-        <span class="tool-item">Word</span>
-        <span class="tool-item">Excel</span>
-        <span class="tool-item">Teams</span>
-        <span class="tool-item">SharePoint</span>
-        <span class="tool-item">Outlook</span>
+        <span>Illustrator</span>
+        <span>InDesign</span>
+        <span>Photoshop</span>
+        <span>After Effects</span>
+        <span>Premiere Pro</span>
+        <span>Audition</span>
+        <span>Firefly</span>
+        <span>PowerPoint</span>
+        <span>Word</span>
+        <span>Excel</span>
+        <span>Microsoft 365</span>
+        <span>Frame.io</span>
+        <span>Camtasia</span>
+        <span>Powtoon</span>
+        <span>draw.io</span>
+        <span>WordPress</span>
+        <span>Squarespace</span>
+        <span>Wix</span>
       </div>
     </div>
   </div>
 </section>
 
-<section id="education">
+<!-- EDUCATION -->
+<section class="education">
   <div class="container">
-    <div class="section-label">Education</div>
-
-    <div class="education-block">
+    <div class="education-item">
       <div class="education-year">Class of 2020</div>
-      <div>
-        <h3 class="education-degree">Bachelor of Arts, Visual Communication and Digital Media Arts</h3>
-        <div class="education-school">Bowie State University</div>
-        <p class="education-focus">
-          Concentration in Advertising and Design. Foundational training in typographic systems, brand identity development, editorial layout, and digital media production.
-        </p>
+      <div class="education-content">
+        <h4>Bachelor of Arts, Visual Communication and Digital Media Arts</h4>
+        <div class="org">Bowie State University</div>
+        <p class="desc">Concentration in Advertising and Design. Foundational training in typographic systems, brand identity development, editorial layout, and digital media production.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="contact" id="contact">
+<!-- CONTACT -->
+<section id="contact" class="contact">
   <div class="container">
-    <div class="section-label">Contact</div>
-    <h2 class="contact-title">
-      Available for remote roles in <em>federal and defense contracting</em> environments.
-    </h2>
-
-    <div class="contact-details">
-      <div>
-        <div class="contact-item-label">Email</div>
-        <a href="mailto:tgarcia1454@gmail.com" class="contact-item-value">tgarcia1454@gmail.com</a>
+    <div class="eyebrow">Contact</div>
+    <h2>Available for remote roles in <em>federal and defense contracting</em> environments.</h2>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="label">Email</div>
+        <div class="value"><a href="mailto:tgarcia1454@gmail.com">tgarcia1454@gmail.com</a></div>
       </div>
-      <div>
-        <div class="contact-item-label">Location</div>
-        <div class="contact-item-value">Washington, DC Metro</div>
+      <div class="contact-item">
+        <div class="label">Location</div>
+        <div class="value">Washington, DC Metro</div>
       </div>
-      <div>
-        <div class="contact-item-label">LinkedIn</div>
-        <a href="https://www.linkedin.com/in/antonio-garcia-363376143/" class="contact-item-value">linkedin.com/in/antonio-garcia</a>
+      <div class="contact-item">
+        <div class="label">LinkedIn</div>
+        <div class="value"><a href="https://www.linkedin.com/in/antonio-garcia-363376143/" target="_blank" rel="noopener">linkedin.com/in/antonio-garcia</a></div>
       </div>
-      <div>
-        <div class="contact-item-label">Behance</div>
-        <a href="https://www.behance.net/tgarcia1456d8a" class="contact-item-value">behance.net/tgarcia1456d8a</a>
+      <div class="contact-item">
+        <div class="label">Behance</div>
+        <div class="value"><a href="https://www.behance.net/tgarcia1456d8a" target="_blank" rel="noopener">behance.net/tgarcia1456d8a</a></div>
       </div>
     </div>
   </div>
@@ -983,12 +1126,11 @@ footer {
 
 <footer>
   <div class="container">
-    <div class="footer-inner">
-      <div class="footer-text">© 2026 Antonio Garcia. All work shown is original.</div>
-      <div class="footer-text">Portfolio, Version 2.0</div>
-    </div>
+    <div class="copyright">© 2026 Antonio Garcia. All work shown is original.</div>
+    <div class="version">Portfolio, Version 3.0</div>
   </div>
 </footer>
 
 </body>
 </html>
+Portfolio v3.0 - Federal design case studies
